@@ -27,20 +27,20 @@ public class HelloControlerTest {
     public void helloGuestTest() throws Exception {
         mockMvc.perform(
                 get("/hello")).andExpectAll(status().isOk(),
-                        content().string(Matchers.containsString("hello world guest")));
+                        content().string(Matchers.containsString("Hello guest")));
     }
 
     @Test
     public void hellonameTest() throws Exception {
         mockMvc.perform(
                 get("/hello").queryParam("name", "kanza"))
-                .andExpectAll(status().isOk(), content().string(Matchers.containsString("hello world kanza")));
+                .andExpectAll(status().isOk(), content().string(Matchers.containsString("hello kanza")));
     }
 
     @Test
-    public void helloPost() throws Exception{
+    public void helloPost() throws Exception {
         mockMvc.perform(post("/hello").queryParam("name", "kanza"))
-        .andExpectAll(status().isMethodNotAllowed());
+                .andExpectAll(status().isMethodNotAllowed());
     }
 
 }
