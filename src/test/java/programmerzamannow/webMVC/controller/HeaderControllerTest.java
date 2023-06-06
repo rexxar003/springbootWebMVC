@@ -22,8 +22,14 @@ public class HeaderControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void header() throws Exception {
+    public void headersucces() throws Exception {
         mockMvc.perform(get("/header/token").header("X-TOKEN", "KANZA"))
                 .andExpectAll(status().isOk(), content().string(Matchers.containsString("OK")));
+    }
+
+    @Test
+    public void headerfailed() throws Exception {
+        mockMvc.perform(get("/header/token").header("X-TOKEN", "NOBODY"))
+                .andExpectAll(status().isOk(), content().string(Matchers.containsString("KO")));
     }
 }
