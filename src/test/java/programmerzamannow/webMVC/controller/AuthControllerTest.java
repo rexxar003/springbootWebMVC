@@ -29,6 +29,7 @@ public class AuthControllerTest {
         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
         .param("username", "kanza")
         .param("password", "rahasia"))
-        .andExpectAll(status().isOk(),content().string(Matchers.containsString("OK")) );
+        .andExpectAll(status().isOk(),content().string(Matchers.containsString("OK"))
+        , cookie().value("username", Matchers.is("kanza")));
     }
 }
