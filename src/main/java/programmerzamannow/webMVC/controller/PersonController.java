@@ -21,7 +21,12 @@ public class PersonController {
         return new StringBuilder().append("Succes create person ").append(request.getFirstName())
         .append(" ").append(request.getMiddleName()).append(" ").append(request.getLastName())
         .append(" ").append("with email ").append(request.getEmail()).append(" ")
-        .append("with phone ").append(request.getPhone()).toString();
+        .append("with phone ").append(request.getPhone())
+        .append(" with address ").append(request.getAddress().getStreet()).append(", ")
+        .append(request.getAddress().getCity()).append(", ")
+        .append(request.getAddress().getCountry()).append(", ")
+        .append("postal code ").append(request.getAddress().getPostalCode())
+        .toString();
     }
     
 }

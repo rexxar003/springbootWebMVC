@@ -29,8 +29,13 @@ public class PersonControllerTest {
         .param("lastName", "zahrawani")
         .param("email", "kanza@gmail.com")
         .param("phone", "xiaomi")
+        .param("address.street", "jln.srijaya")
+        .param("address.city", "palembang")
+        .param("address.country", "indonesia")
+        .param("address.postalCode", "1111")
         ).andExpectAll(status().isOk(),content().string(Matchers.containsString(
-            "Succes create person kanza az zahrawani with email kanza@gmail.com with phone xiaomi"
+            "Succes create person kanza az zahrawani with email kanza@gmail.com with phone xiaomi with address"+
+            " jln.srijaya, palembang, indonesia, postal code 1111"
         )));
     }
 }
