@@ -18,6 +18,10 @@ public class PersonController {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public String createPerson(@ModelAttribute CreatePersonRequest request){
+        
+        System.out.println(request);
+
+
         return new StringBuilder().append("Succes create person ").append(request.getFirstName())
         .append(" ").append(request.getMiddleName()).append(" ").append(request.getLastName())
         .append(" ").append("with email ").append(request.getEmail()).append(" ")

@@ -1,5 +1,7 @@
 package programmerzamannow.webMVC.model;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,4 +17,6 @@ public class CreatePersonRequest {
     private String email;
     private String phone;
     private CreateAddressRequest address;
+    private List<String> hobbies;
+    private List<CreateSocialMediaRequest> socialMedia;
 }

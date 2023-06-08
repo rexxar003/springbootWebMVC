@@ -33,6 +33,16 @@ public class PersonControllerTest {
         .param("address.city", "palembang")
         .param("address.country", "indonesia")
         .param("address.postalCode", "1111")
+        .param("hobbies[0]", "coding")
+        .param("hobbies[1]", "reading")
+        .param("hobbies[2]", "gaming")
+        .param("socialMedia[0].name", "kanzaazIG")
+        .param("socialMedia[0].location", "socailMediaLocation")
+        .param("socialMedia[1].name", "kanzaazIG1")
+        .param("socialMedia[1].location", "socailMediaLocation1")
+        
+        
+
         ).andExpectAll(status().isOk(),content().string(Matchers.containsString(
             "Succes create person kanza az zahrawani with email kanza@gmail.com with phone xiaomi with address"+
             " jln.srijaya, palembang, indonesia, postal code 1111"
