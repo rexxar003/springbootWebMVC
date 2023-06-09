@@ -2,15 +2,12 @@ package programmerzamannow.webMVC.controller;
 
 import java.io.IOException;
 
-import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.jayway.jsonpath.internal.Path;
 
 @Controller
 public class UploadController {

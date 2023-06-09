@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -66,11 +67,14 @@ public class PersonApiCotrollerTest {
         request.setSocialMedia(new ArrayList<>());
         request.getSocialMedia().add(new CreateSocialMediaRequest("IG", "kanzaIG"));
 
-
         mockMvc.perform(post("/api/person")
         .contentType(MediaType.APPLICATION_JSON)
         .accept(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(request))
-        ).andExpectAll(status().isBadRequest());
+        ).andExpectAll(
+            status().isBadRequest(),
+            content().string(Matchers.containsString("validation error "))
+            
+            );
     }
 }

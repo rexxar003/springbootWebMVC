@@ -8,9 +8,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import programmerzamannow.webMVC.service.HelloService;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.matches;
-import static org.springframework.test.web.servlet.MockMvcBuilder.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -18,8 +15,6 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc

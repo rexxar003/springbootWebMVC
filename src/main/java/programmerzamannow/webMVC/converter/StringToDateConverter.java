@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import ch.qos.logback.core.pattern.Converter;
 import lombok.extern.slf4j.Slf4j;
 import java.util.Date;
 
